@@ -180,7 +180,7 @@ public class ArrayExample1 {
 		// --java에서 ㅈ공하는 배열과 관련된 기능을 모아둔 클래스
 		
 		int[] arr2 = new int[4];
-		// Arrays.toString(배열명) : 모든 요소 값 출력
+		// Arrays.toString(배열명) : array의 모든 요소 값 출력
 		System.out.println(Arrays.toString(arr));
 		System.out.println(Arrays.toString(arr2));//[0, 0, 0, 0] int의 기본값이 0이기 때문이다
 		
@@ -222,7 +222,7 @@ public class ArrayExample1 {
 		}
 			
 		//flag 상태를 for문 밖에서  검사 
-		if( !flag ) { //flag는 기본적으로 false !flag라는 것은 인덱스에 없다는 것을 알려준다
+		if( !flag ) { //!flag는 flag가 true가 아닐경우를 의미한다 - 즉 !flag는 false
 			System.out.println("존재하지 않음");
 		}
 	}
@@ -242,7 +242,7 @@ public class ArrayExample1 {
 			if(arr[i].equals(input)) {
 				System.out.println(i + "번 인덱스에 존재");
 				
-			flag = true;
+			flag = true;// flag값을 true로 정의
 			}
 			if(!flag) {
 				System.out.println("존재하지 않음");
@@ -251,4 +251,51 @@ public class ArrayExample1 {
 		
 		
 	}
+	public void ex8() {
+		// 1. 문자열을 입력받아 한글자씩 잘라내어  char 배열에 순서대로 저장
+		//2. 문자 하나를 입력받아 문자가 char 배열에 몇개 존재하는지 확인
+		//3. 단 일치하는 문자가 없을 경우 존재하지 않습니다
+		
+		//쓸기술
+		//1)배열검색
+		//2)String.length() 문자열의 길이
+		// 		ex) "Hello".length - 5
+		
+		//3) Sring.charAt(index) : 문자열에서 특정 index 에 위치한 문자하나를 얻어옴
+		// ex "Hello".charAt(1) > 'e'
+		
+		//4) count 숫자세기
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자 입력 : ");
+		String input = sc.nextLine();
+		
+		char[] arr = new char[input.length()];//공간할당 1.
+		
+		for(int i=0; i<arr.length; i++) {//이 for문에서 받은 문자의 arr 주소값을 i설정
+			arr[i] = input.charAt(i);
+		}
+		//System.out.println(Arrays.toString(arr)); -중간 확인 과정
+		
+		System.out.print("문자 하나 입력 : ");
+		char ch = sc.nextLine().charAt(0);//-한글자 이기 떄문에 무조건 0번째 인덱스에서 가져온다 그래서 0
+											//chaining-자료형만 같다면 메소드를 계속 이어서 쓸수 있다.
+		int count = 0;//글자 개수 세기 위한 변수
+		
+		for(int i = 0; i <arr.length; i++) {//여기서 arr[i]과 입력받은 문자 하나를 비교해 카운트를 센다
+			if(arr[i] == ch) {
+				count++;//arr안에 ch가 있는 만큼 카운트를 높인다
+			}
+			
+		}
+		if(count > 0) {
+			System.out.println(count);
+		}else {
+			System.out.println("존재하지 않음");
+		}
+	
+		}
+		
+	
 }
