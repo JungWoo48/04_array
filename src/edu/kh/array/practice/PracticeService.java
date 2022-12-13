@@ -133,10 +133,16 @@ public class PracticeService {
 		//배열의 크기만큼 사용자가 직접 값을 입력하여 각각의 인덱스에 값을 초기화 하라
 		//그리고 배열 전체 값을 나열하고 각 인덱스에 저장된 값들의 합을 출력해라
 		
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("정수 : ");
+		int id = sc.nextInt();
+			
+		int arr[] = new int[id];
 		
-		
-		
+		System.out.print("정수 : ");
+		int input = sc.nextInt();
+			
 		
 	}
 	
