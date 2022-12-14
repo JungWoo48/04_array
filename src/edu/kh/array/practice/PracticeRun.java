@@ -6,7 +6,7 @@ public class PracticeRun {
 		
 		PracticeService arrpr = new PracticeService();
 		
-		arrpr.pr5();
+		arrpr.pr13();
 	}
 
 }
